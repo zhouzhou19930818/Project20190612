@@ -1,0 +1,183 @@
+.sd-tabs {
+
+    // 修改tabs样式
+    .ant-tabs-tab {
+        padding: 12px 4px 15px;
+    }
+
+    // yarn--程序--总体趋势
+    .part {
+        padding-top: 15px;
+        overflow: hidden;
+
+        & > div {
+            width: calc(50% - 7.5px);
+            height: 100%;
+
+
+            &.left {
+                float: left;
+            }
+
+            &.right {
+                float: right;
+            }
+
+            .ant-card-body {
+                padding: 0;
+            }
+        }
+    }
+
+    // yarn--程序--程序历史+运行时长
+    .program-history, .program-running {
+        margin-top: 10px;
+        padding-top: 15px;
+    }
+
+    // 程序
+    .block-wrapper {
+        width: 100%;
+        background: #ffffff;
+    }
+
+    .block {
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    .block-title {
+        //padding-top: 10px;
+        font-family: SourceHanSansCN-Medium;
+        color: #1B67E0;
+        line-height: 38px;
+        font-size: 14px;
+        font-weight: 500;
+
+        &::before {
+            content: '';
+            display: inline-block;
+            width: 3px;
+            height: 22px;
+            vertical-align: middle;
+            background: #1B67E0;
+            border-radius: 2px;
+            margin-right: 10px;
+            margin-top: -4px;
+            margin-left: 0;
+        }
+    }
+
+    .block-body {
+        position: relative;
+
+    }
+
+    // 白色背景
+    .white-bg{
+        background: #ffffff;
+        border:1px solid rgba(231,231,231,1);
+        box-shadow:0 1px 4px 0 rgba(80,84,90,0.1);
+    }
+
+    .chart-table {
+        width: 100%;
+        height: 300px;
+    }
+    // 修改Card样式
+    .grey-card-title {
+
+        .ant-card-head {
+            background: #F4F4F4;
+
+            .ant-card-head-title {
+                font-size: 16px;
+                font-family: SourceHanSansCN-Medium;
+                font-weight: 500;
+                color: rgba(91, 91, 91, 1);
+                line-height: 24px;
+
+                .anticon {
+                    margin-right: 12px;
+                }
+            }
+
+            .ant-card-extra {
+                color: #808080;
+                font-size: 13px;
+                font-weight: 500;
+            }
+        }
+    }
+
+    // 修改radio样式
+    .radio-button {
+        margin-right: 10px;
+
+        .ant-radio-button-wrapper {
+            height: 30px;
+            box-sizing: border-box;
+            margin: 0 4px;
+            background: #EEEEEE;
+            color: #666666;
+            border-color: transparent;
+            border-width: 0;
+            border-radius: 2px;
+            line-height: 30px;
+            font-size: 14px;
+            font-weight: 500;
+
+            &::before {
+                content: none;
+            }
+
+            &:first-child {
+                border-radius: 2px;
+            }
+
+            &:last-child {
+                border-radius: 2px;
+            }
+
+            &.ant-radio-button-wrapper-checked {
+                background: #1A83ED;
+                color: #ffffff;
+                border-radius: 2px;
+                box-shadow: none;
+            }
+
+            span {
+                font-size: 13px;
+            }
+
+
+        }
+
+        &.wireframe {
+            .ant-radio-button-wrapper {
+                background: transparent;
+                color: #808080;
+                border: 1px solid #808080;
+                padding: 0 12px;
+                height: 26px;
+                line-height: 26px;
+
+                &.ant-radio-button-wrapper-checked {
+                    background: transparent;
+                    color: #1A83ED;
+                    border-color: #1A83ED;
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+
+    // 修改日历样式
+    .ant-calendar-picker {
+
+        .ant-calendar-picker-input.ant-input {
+            font-size: 13px;
+
+        }
+    }
+}

@@ -1,0 +1,58 @@
+.sd-modal {
+    display: none;
+
+    .modal-container {
+        //opacity: 0;
+        //transition: opacity 2s;
+    }
+
+    &.show {
+        display: block;
+
+        .modal-mask {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 999;
+        }
+
+        .modal-container {
+            //opacity: 1;
+            position: fixed;
+            bottom: 2px;
+            right: 0;
+            width: 450px;
+            height: 80vh;
+            background: #ffffff;
+            box-shadow: 0 0 5px 3px #d8d8d8;
+            z-index: 1000;
+
+            .modal-header {
+                padding: 12px 24px;
+                border-bottom: 1px solid #f2f2f2;
+
+                span {
+                    font-size: 15px;
+                }
+
+                button.close {
+                    float: right;
+                    color: #A5A5A5;
+                    font-size: 30px;
+                    line-height: 20px;
+                }
+            }
+
+            .modal-body {
+                padding: 12px 15px;
+                height: calc(100% - 48px);
+
+            }
+
+        }
+    }
+
+
+}

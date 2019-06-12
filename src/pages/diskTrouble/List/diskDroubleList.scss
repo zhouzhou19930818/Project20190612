@@ -1,0 +1,513 @@
+.drag-container {
+    position: relative;
+    z-index: 11;
+    height: 100%;
+    overflow: auto;
+    .ant-steps {
+        margin-left: 20%;
+        margin-top:36px;
+        height: 80px;
+        width: 700px;
+        margin-bottom: 15px;
+        position: static;
+        left: 50%;
+        transform: translate(0, 20%);
+        z-index: 11;
+        // background: blueviolet;
+
+        span[class^="dot-img"] {
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            display: inline-block;
+            width: 52px;
+            height: 52px;
+            background: url("../../../assets/images/stepicon01-undo.png");
+
+
+
+            &.dot-img-0{
+                background-position: 0 0;
+            }
+            &.dot-img-1{
+                background-position: -52px 0;
+            }
+            &.dot-img-2{
+                background-position: -104px 0;
+            }
+            &.dot-img-3{
+                background-position: -156px 0;
+            }
+            &.dot-img-4{
+                background-position: -208px 0;
+            }
+        }
+
+        .ant-steps-item-process {
+            span[class^="dot-img"] {
+                background: url("../../../assets/images/stepicon01-normal.png");
+            }
+        }
+        .ant-steps-item-finish {
+            span[class^="dot-img"] {
+                background: url("../../../assets/images/stepicon01-finish.png");
+                background-position: 0 0;
+            }
+            // &.dot-img-5{
+            //     background: url("../../../assets/images/stepicon01-finish.png");
+            // }
+        }
+    }
+
+    .drag-content {
+        position: absolute;
+        top: 420px;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 10;
+        background: #F7F9FC;
+
+        .drag-header {
+            height: 14px;
+            line-height: 14px;
+            text-align: center;
+            vertical-align: middle;
+            background-color: #F0F0F0;
+            cursor: n-resize;
+            box-shadow: 0px -2px 10px 2px #cccccc;
+            position: relative;
+            z-index: 4;
+            user-select: none;
+
+            &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                z-index: 2;
+            }
+
+            img {
+                height: 50%;
+                cursor: n-resize;
+            }
+        }
+
+        .drag-body {
+            background-color: rgb(240, 245, 255);
+            height: calc(100% - 16px);
+
+
+            // 修改ant-tabs样式
+            .disk-list-vertical-tabs {
+                height: 100%;
+
+                .ant-tabs-top-bar {
+                    border: none;
+                    height: 100%;
+                    background-color: #ffffff;
+
+                    //步骤样式
+                    .ant-tabs-nav-container {
+                        .ant-tabs-nav-wrap {
+                            width: 100%;
+                            text-align: center;
+                            padding-top: 20px;
+
+                            .ant-tabs-tab {
+                                text-align: left;
+                                height: 72px;
+                                line-height: 72px;
+                                margin-bottom: 0;
+                                border-left: 2px solid transparent;
+                                padding: 0 15px;
+
+                                &.ant-tabs-tab-active {
+                                    background-color: rgb(240, 245, 255);
+                                    border-left-color: rgba(168, 207, 252, 1);
+                                }
+
+                                .vertical-pane-title {
+                                    height: 100%;
+                                    // position: relative;
+                                    user-select: none;
+                                    // z-index: 8;
+
+                                    >span {
+                                        vertical-align: middle;
+                                    }
+
+                                    // 图标
+                                    // span[class^="icon"] {
+                                    //     display: inline-block;
+                                    //     width: 155px;
+                                    //     height: 26px;
+                                        
+
+                                    //     &.icon_2 {
+                                    //         background-position: -50px 10px;
+                                    //     }
+
+                                    //     &.icon_3 {
+                                    //         background-position: -50px 10px;
+                                    //     }
+
+                                    //     &.icon_4 {
+                                    //         background-position: -50px 10px;
+                                    //     }
+
+                                    //     &.icon_5 {
+                                    //         background-position: -50px 10px;
+                                    //     }
+                                    // }
+
+                                    // 文字
+                                    span.title {
+                                        //vertical-align: middle;
+                                        margin-left: -10px;
+                                        margin-right: 10px;
+                                    }
+
+
+                                    span[class^="disk-status"] {
+                                        display: inline-block;
+                                        width: 25px;
+                                        height: 22px;
+                                        background: url("../../../assets/images/icon_disk_status.png");
+                                        margin-top: -4px;
+                                        position: relative;
+
+                                        >span {
+                                            position: absolute;
+                                            right: 5px;
+                                            top: 0px;
+                                            line-height: 16px;
+                                            font-size: 12px;
+                                            font-weight: 500;
+                                        }
+
+                                        &.disk-status-waiting {
+                                            margin-right: 4px;
+
+                                            >span {
+                                                color: #333333;
+                                            }
+                                        }
+
+                                        &.disk-status-failed {
+                                            background-position: -28px 0;
+
+                                            >span {
+                                                color: #ffffff;
+                                            }
+
+                                        }
+                                    }
+
+                                    // 徽章
+                                    .title-badge sup {
+                                        padding: 0 10px;
+                                    }
+
+                                    //& > div {
+                                    //    height: 50%;
+                                    //    text-align: left;
+                                    //
+                                    //    &:first-child {
+                                    //        padding-top: 1rem;
+                                    //    }
+                                    //
+                                    //
+                                    //}
+
+
+                                    //// 进度条
+                                    //.ant-progress {
+                                    //    position: absolute;
+                                    //    bottom: 8px;
+                                    //
+                                    //    .ant-progress-inner {
+                                    //        width: 80%;
+                                    //        border: 1px solid #D5D5D5;
+                                    //        background: transparent;
+                                    //    }
+                                    //}
+                                }
+                            }
+
+                            .ant-tabs-ink-bar.ant-tabs-ink-bar-animated {
+                                background-color: transparent;
+                            }
+
+                        }
+                    }
+                }
+
+                .ant-tabs-content {
+                    height: 100%;
+                    padding: 20px 44px;
+                    overflow: auto;
+
+                    // "修复列表""控制台"前的两个icon
+                    .icon-wrapper {
+                        width: 20px;
+                        height: 20px;
+                        background: url("../../../assets/images/icon_subtitle.png");
+                        margin-right: 10px;
+                        display: inline-block;
+                        vertical-align: middle;
+
+                        &.top {
+                            background-position: -2px 1px;
+                        }
+
+                        &.bottom {
+                            background-position: -32px 1px;
+                            ;
+                        }
+                    }
+
+                    
+
+                    // "修复列表"
+                    .top-part {
+                        margin-bottom: 40px;
+                    }
+
+                    .ant-table-selection-column {
+                        width: 20px;
+                    }
+
+                    tr th:nth-child(4) {
+                        text-align: center;
+                    }
+
+                    // tr th:nth-child(5){
+                    //     text-align: left;
+                    // }
+                    tr td:nth-child(4) {
+                        text-align: center;
+                    }
+
+                    
+
+                }
+            }
+        }
+    }
+}
+// "修复列表""控制台"               
+.title {
+    font-size: 16px;
+    font-family: SourceHanSansCN-Medium;
+    color: rgba(48,48,48,1);
+    font-weight:500;
+    display: inline-block;
+    text-align: left;
+}
+// "控制台"
+.bottom-part {
+    background: #3D3E3E;
+    font-size: 12px;
+    color: #BEBEBE;
+    border-radius: 2px;
+    vertical-align: top;
+    overflow: auto;
+    padding-left: 8px;
+    height: 36px;
+    width: 347px;        
+    display: inline-block; 
+    text-align:left;
+    .console {
+        .block {
+            text-align: left;
+            &:not(:last-child) {
+                margin-bottom: 12px;
+            }
+        }
+
+
+        ::-webkit-scrollbar {
+            width: 5px;
+            /*对垂直流动条有效*/
+            height: 5px;
+            /*对水平流动条有效*/
+        }
+
+        /*定义滑块颜色、内阴影及圆角*/
+        ::-webkit-scrollbar-thumb {
+            border-radius: 3px;
+            background-color: #d3e4ff;
+        }
+
+    }
+}
+.wrapper {
+    font-size: 14px;
+    //line-height: 24px;
+    color: rgba(85, 85, 85, 1);
+    vertical-align: middle;
+    white-space: normal;
+    word-break: break-all;
+
+    &:not(:last-child) {
+        margin-bottom: 10px;
+    }
+
+    span[class^="icon"] {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        background: url("../../../assets/images/icon_console_title.png");
+        margin-right: 6px;
+
+        &.icon_url {
+            background-position: -19px 0px
+        }
+    }
+
+    .status {
+        height: 24px;
+        border-radius: 12px;
+        padding: 5px 12px;
+        margin-left: 12px;
+
+        &.grey {
+            color: #cccccc;
+            background: rgba(240, 240, 240, 1);
+        }
+
+        &.blue {
+            color: #2E8CF5;
+            background: rgba(231, 245, 255, 1);
+        }
+
+        &.red {
+            color: #F24747;
+            background: rgba(255, 238, 238, 1);
+        }
+
+        &.green {
+            color: #008364;
+            background: #EAF8E5;
+        }
+    }
+}
+
+.status {
+    height: 24px;
+    border-radius: 12px;
+    padding: 5px 12px;
+    margin-left: 12px;
+
+    &.grey {
+        color: #fff;
+        background: #CDD1DA;
+    }
+
+    &.blue {
+        color: #213555;
+        background: rgba(210,241,255,1);
+    }
+
+    &.red {
+        color: #614836;
+        background: rgba(255,246,201,1);
+    }
+
+    &.green {
+        color: #008364;
+        background: #EAF8E5;
+    }
+}
+
+.statistics {
+    height: 42px;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 0 5px 2px rgba(187, 194, 205, 0.3);
+    display: inline-block;
+    margin-bottom: 15px;
+    user-select: none;
+
+    .block {
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+        line-height: 42px;
+        padding: 0 24px;
+        border-right: 1px solid #EDEDED;
+
+        img {
+            width: 26px;
+            height: 26px;
+            margin-top: -10px;
+        }
+
+        span {
+            margin-left: 10px;
+
+            &:nth-of-type(1) {
+                font-size: 13px;
+                font-weight: 400;
+                color: rgba(48, 48, 48, 1);
+            }
+
+            &:nth-of-type(2) {
+                font-size: 20px;
+                font-weight: bold;
+                color: #333333;
+            }
+
+            &:nth-of-type(3) {
+                color: #555555;
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+// tooltip
+.tabs-tooltip {
+    padding: 0;
+
+    .ant-tooltip-arrow {
+        top: -5px;
+    }
+
+    .ant-tooltip-inner {
+        min-height: 0;
+        padding: 2px 3px;
+        font-size: 12px;
+    }
+}
+
+.sd-modal .modal-body {
+
+    .detail_top {
+        height: 70px;
+        overflow: auto;
+    }
+
+    .detail_bottom {
+        background: #313131;
+        font-size: 12px;
+        font-family: SourceHanSansCN-Regular;
+        font-weight: 400;
+        color: rgba(179, 179, 179, 1);
+        padding: 8px 15px;
+        height: calc(100% - 85px);
+        overflow: auto;
+        border-radius: 2px;
+
+        pre.step-console {
+            font-size: 12px;
+            font-family: SourceHanSansCN-Regular;
+            font-weight: 400;
+            color: rgba(179, 179, 179, 1);
+        }
+    }
+}

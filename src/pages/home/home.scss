@@ -1,0 +1,220 @@
+$header-height: 60px;
+$breadcrumb-height: 38px;
+
+%first-menu-icon {
+    color: #ffffff;
+    width: 28px;
+    height: 28px;
+    background: linear-gradient(90deg, rgba(14, 110, 223, 0.5), rgba(42, 160, 255, 0.5));
+    box-shadow: 0 2px 4px 0 rgba(16, 112, 225, 0.16);
+    border-radius: 50%;
+    vertical-align: middle;
+    line-height: 28px;
+    font-size: 16px;
+    padding-top: 2px;
+}
+
+.home {
+    height: 100%;
+
+    .header {
+        position: relative;
+        //background: linear-gradient(90deg, rgba(17, 35, 93, 1), rgba(10, 76, 189, 1));
+        background: linear-gradient(90deg, rgb(10, 76, 189) 0%, rgb(17, 35, 93) 100%);;
+        height: $header-height;
+        line-height: $header-height;
+        vertical-align: middle;
+
+        &::before {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            max-width: 988px;
+            background: url(../../assets/images/head_bg_left.png) no-repeat;
+        }
+
+        &::after {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 50%;
+            max-width: 537px;
+            background: url(../../assets/images/head_bg_right.png) no-repeat;
+            //z-index: 1000;
+        }
+
+        .title {
+            color: #ffffff;
+            font-size: 30px;
+            font-weight: bold;
+            position: relative;
+            z-index: 1000;
+        }
+
+        .user {
+            height: 28px;
+            border-radius: 14px;
+            position: absolute;
+            top: 20px;
+            right: 50px;
+            z-index: 1000;
+            padding-left: 12px;
+            padding-right: 12px;
+        }
+    }
+
+    .body {
+        height: calc(100% - #{$header-height});
+
+        .sider {
+            height: 100%;
+            overflow-y: auto;
+            overflow-x: hidden;
+            background: url(../../assets/images/sider_bg.png) #052453;
+
+
+            .menu {
+                background-color: transparent;
+                border-right: none;
+                color: #ffffff;
+
+                a {
+                    color: #ffffff;
+                    display: inline-block;
+                }
+
+                span > i {
+                    @extend %first-menu-icon;
+                }
+
+                // 一层菜单
+                .ant-menu-item {
+                    a > i {
+                        @extend %first-menu-icon;
+                    }
+
+                    // 选中时
+                    &.ant-menu-item-selected {
+                        background-color: transparent;
+
+                        a {
+                            color: rgba(42, 160, 255, 1);
+                        }
+
+                        &::after {
+                            content: none;
+                        }
+                    }
+
+                    // hover 时
+                    &.ant-menu-item-active {
+                        background-color: transparent;
+
+                        a {
+                            color: rgba(42, 160, 255, 1);
+                        }
+
+                    }
+                }
+
+                // 二层菜单
+                .ant-menu-submenu.subMenu {
+                    background-color: transparent;
+
+                    // .ant-menu-submenu-title {
+
+                    // }
+
+                    .ant-menu {
+                        background-color: transparent;
+                        margin-top: 10px;
+                        margin-bottom: 20px;
+
+                        .ant-menu-item {
+                            margin: 0;
+                            height: 30px;
+                            line-height: 30px;
+
+                            // 加上远点, 去除antd的after
+                            &::before {
+                                content: '';
+                                display: inline-block;
+                                width: 6px;
+                                height: 6px;
+                                background: rgba(16, 142, 233, 1);
+                                border-radius: 50%;
+                                margin-right: 10px;
+                                vertical-align: middle;
+                                margin-top: -4px;
+                                opacity: 0;
+                            }
+
+                            &::after {
+                                content: none;
+                            }
+
+                            &.ant-menu-item-selected::before {
+                                opacity: 1;
+                            }
+
+                            &.ant-menu-item-selected {
+                                background-color: transparent;
+
+                                a {
+                                    color: #ffffff;
+                                }
+                            }
+                        }
+
+
+                    }
+                }
+            }
+        }
+
+        .content {
+            height: 100%;
+
+            .router-wrapper {
+                height: calc(100% - #{$breadcrumb-height});
+                overflow-y: auto;
+            }
+        }
+    }
+}
+
+.sd-breadcrumb-wrapper {
+    position: relative;
+    height: $breadcrumb-height;
+    line-height: 34px;
+    background: #ffffff;
+    padding-left: 15px;
+    box-shadow: 0 1px 0 0 rgba(233, 233, 233, 1);
+    z-index: 999;
+
+    i {
+        vertical-align: middle;
+    }
+
+    .sd-breadcrumb {
+        padding: 0 5px;
+        vertical-align: middle;
+        display: inline-block;
+        line-height: 38px;
+
+        .sd-breadcrumb-link {
+            cursor: pointer;
+
+            &:hover {
+                color: #0E6EDF;
+            }
+        }
+    }
+}

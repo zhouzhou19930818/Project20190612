@@ -1,0 +1,92 @@
+// 上一步、下一步按钮
+.sd-arrow-button {
+    width: 92px;
+    height: 30px;
+    background: rgba(242, 247, 252, 1);
+    border: 1px solid rgba(201, 228, 248, 1);
+    border-radius: 15px;
+    color: #108EE9;
+    transition: all 0.5s;
+
+    &:hover {
+        border-color: rgba(131, 195, 242, 1);
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    .icon {
+        display: inline-block;
+        width: 13px;
+        height: 12px;
+        background: url("../assets/images/icon_arrows_next.png");
+        margin-left: 7px;
+        margin-right: 0;
+
+    }
+
+    &.last {
+        .icon {
+            transform: rotate(180deg);
+            margin-left: 0;
+            margin-right: 7px;
+        }
+    }
+}
+
+// Loading
+.sd-loading {
+    //position: fixed;
+    //top: 0;
+    //bottom: 0;
+    //left: 0;
+    //right: 0;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+
+    & > div {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+
+    }
+
+    span {
+        position: absolute;
+        top: 45%;
+        left: 45%;
+        background-color: transparent;
+        color: rgb(random(255), random(255), random(255));
+        animation: colorChange 8s infinite alternate;
+        font-size: 2rem;
+        font-weight: bolder;
+    }
+}
+
+@keyframes colorChange {
+    0% {
+        color: hsla(random(360), 100%, 50%, .2);
+    }
+    20% {
+        color: hsla(random(360), 100%, 50%, .2);
+    }
+    40% {
+        color: hsla(random(360), 100%, 50%, .2);
+    }
+    60% {
+        color: hsla(random(360), 100%, 50%, .2);
+    }
+    80% {
+        color: hsla(random(360), 100%, 50%, .2);
+    }
+    100% {
+        color: hsla(random(360), 100%, 50%, .6);
+    }
+}
+
+
+//

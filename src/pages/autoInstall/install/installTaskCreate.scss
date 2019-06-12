@@ -1,0 +1,26 @@
+$sd-title-height: 46px;
+$steps-height: 110px;
+$steps-footer-height: 78px;
+
+$step-content-padding: 40px;
+$step-content-filter-form: 37px;
+$step-content-table-pagination: 44px;
+.steps-content {
+    height: calc(100% - #{$sd-title-height} - #{$steps-height} - #{$steps-footer-height});
+    overflow-y: auto;
+
+    > div, > form {
+        height: 100%;
+        background: #ffffff;
+        margin: 0 auto;
+        box-shadow: 0 1px 5px 0 rgba(187, 194, 205, 0.3);
+
+        .ant-table {
+            height: calc(100% - #{$step-content-padding} - #{$step-content-filter-form} - #{$step-content-table-pagination});
+        }
+
+        .ant-pagination.ant-table-pagination {
+            margin-bottom: 0;
+        }
+    }
+}
